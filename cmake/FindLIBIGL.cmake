@@ -1,3 +1,4 @@
+ 
 # - Try to find the LIBIGL library
 # Once done this will define
 #
@@ -14,7 +15,7 @@ find_path(LIBIGL_INCLUDE_DIR igl/readOBJ.h
     PATHS
         ${CMAKE_SOURCE_DIR}/../..
         ${CMAKE_SOURCE_DIR}/..
-        ${CMAKE_SOURCE_DIR}
+        ${CMAKE_SOURCE_DIR}/3rdparty/libigl
         ${CMAKE_SOURCE_DIR}/libigl
         ${CMAKE_SOURCE_DIR}/../libigl
         ${CMAKE_SOURCE_DIR}/../../libigl
