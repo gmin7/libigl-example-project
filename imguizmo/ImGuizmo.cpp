@@ -933,7 +933,7 @@ namespace ImGuizmo
          DrawRotationCount += 4;
       }
 
-      printf("DrawRotationCount: %d \n", DrawRotationCount);
+      // printf("DrawRotationCount: %d \n", DrawRotationCount);
    }
 
    static void DrawHatchedAxis(const vec_t& axis)
