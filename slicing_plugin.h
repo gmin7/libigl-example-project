@@ -47,8 +47,11 @@ class SlicingPlugin : public igl::opengl::glfw::imgui::ImGuiMenu {
 		static Eigen::Matrix4f matrix = Eigen::Matrix4f::Identity();
 		Eigen::Affine3f rescale = Eigen::Scaling(0.5f * viewer->core().camera_base_zoom)
 			* Eigen::Translation3f(viewer->core().camera_base_translation);
-		Eigen::Affine3f view = Eigen::Affine3f(viewer->core().view) * rescale.inverse();
+		// Eigen::Affine3f view = Eigen::Affine3f(viewer->core().view) * rescale.inverse();
 		Eigen::Matrix4f proj = viewer->core().proj;
+
+		float camera_zoom = viewer->core().camera_zoom;
+		Eigen::Affine3f view = Eigen::Affine3f(viewer->core().view * (1./camera_zoom)) * rescale.inverse();
 
 		ImGuizmo::EditTransform(view.matrix().data(), proj.data(), matrix.data());
 
